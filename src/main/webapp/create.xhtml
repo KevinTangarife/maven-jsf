@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Crear Producto</title>
+</h:head>
+<h:body>
+	<h:form>
+	
+		<p:messages>
+            <p:autoUpdate/>
+        </p:messages>
+		<p:panelGrid columns="2" cellspacing="20">
+			<f:facet name="header">Crear producto</f:facet>
+			
+			<p:outputLabel for="textname" value="Nombre"/>
+			<p:inputText id="textname" value="#{nuevo.nombre}" required="true"/>
+			
+			<p:outputLabel for="textdesc" value="Descripción"/>
+			<p:inputTextarea rows="5" cols="33" id="textdesc" value="#{nuevo.descripcion}" required="true"/>
+			
+			<f:facet name="footer"></f:facet>
+		</p:panelGrid>
+		<p:commandButton value="Guardar" action="#{productBean.save(nuevo)}" styleClass="ui-button-outlined ui-button-success" />
+	</h:form>
+</h:body>
+</html>
